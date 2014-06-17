@@ -84,10 +84,9 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(ENV_ROOT, 'static')
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(ENV_ROOT, 'media')
-STATIC_URL = '/media/'
+MEDIA_ROOT = os.path.join(ENV_ROOT, 'media')
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
-    os.path.join(PROJECT_ROOT, 'media'),
 )
