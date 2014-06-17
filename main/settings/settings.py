@@ -22,7 +22,7 @@ def rel(*x):
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')6h3$-#8zn8@-!rrqtvldl+yc3wla+u#+$acbwe@($&gtr7193'
+SECRET_KEY = 'n6hd$-f8dn8@-!dg2tvldl+snhela+u#+a4rjwea(r&gtr7r9r:settings'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -46,20 +46,12 @@ ROOT_URLCONF = 'main.urls'
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
-
 # Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'class',
-        'USER': 'ruslan',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+DATABASE_ENGINE = 'django.db.backends.postgresql_psycopg2'
+DATABASE_USER = 'class'
+DATABASE_PASSWORD = ''
+DATABASE_HOST = 'localhost'
+DATABASE_PORT = '5432'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -89,4 +81,3 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
     os.path.join(PROJECT_ROOT, 'media'),
 )
-
