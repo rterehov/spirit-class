@@ -1,6 +1,7 @@
 psycopg2==2.4.5
 South==0.8.4
 uWSGI==2.0.5.1
+django-post-office==0.8.4
 
 -e git+https://github.com/nitely/Spirit.git#egg=spirit
 

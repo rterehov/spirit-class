@@ -17,7 +17,7 @@ _requirements:
 
 req: _requirements
 
-db: syncdb loaddata_spirit createcachetable_spirit migrate
+db: syncdb migrate
 
 loaddata_spirit:
 	@echo "Load data spirit"
