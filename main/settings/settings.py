@@ -63,6 +63,7 @@ DATABASES = {
 
 INSTALLED_APPS += (
     'south',
+    'post_office',
 )
     
 
