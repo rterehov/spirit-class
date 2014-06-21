@@ -2,9 +2,15 @@
 
 from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.contrib import admin
+
+
+admin.autodiscover()
+
 
 urlpatterns = patterns('',
-    url(r'^board/', include('spirit.urls', namespace="spirit", app_name="spirit"))
+    url(r'^board/',     include('spirit.urls', namespace="spirit", app_name="spirit")),
+    url(r'^admin/',     include(admin.site.urls)),
 )
 
 if settings.DEBUG:
