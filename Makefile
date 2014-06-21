@@ -17,7 +17,15 @@ _requirements:
 
 req: _requirements
 
-db: syncdb migrate
+db: syncdb loaddata_spirit createcachetable_spirit migrate
+
+loaddata_spirit:
+	@echo "Load data spirit"
+	@python manage.py loaddata spirit_init
+
+createcachetable_spirit:
+	@echo "Create cache table spirit"
+	@python manage.py createcachetable spirit_cache
 
 migrate:
 	@echo "Running migrations"
