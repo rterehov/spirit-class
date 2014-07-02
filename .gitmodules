@@ -1,0 +1,3 @@
+[submodule "compat/spirit"]
+	path = compat/spirit
+	url = git@github.com:rterehov/Spirit.git
