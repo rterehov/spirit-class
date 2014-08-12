@@ -3,6 +3,10 @@ class: _production_requirements collectstatic end
 dev.class: _dev_requirements collectstatic end
 st.class: _production_requirements collectstatic end
 
+uninstall:
+	@echo "Uninstall old packages"
+	@pip uninstall --exists-action=s -y -r docs/uninstall.txt
+
 _production_requirements:
 	@echo "Installing production requirements"
 	@pip install --exists-action=s -r docs/production.txt
