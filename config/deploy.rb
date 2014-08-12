@@ -28,17 +28,11 @@ set :use_sudo, false
 
 before 'deploy', 'deploy:stop_file'
 
-if false # s3
-  after "deploy:update", "deploy:cleanup", "deploy:set_local_settings",
-        "deploy:pip_install", "deploy:collectstatic_s3", "deploy:static_simlink", 
-        "deploy:migrate"
-else
-  after "deploy:update", "deploy:cleanup", "deploy:set_local_settings",
-        "deploy:pip_install", "deploy:collectstatic", "deploy:static_simlink", 
-        "deploy:migrate"
-end
+after "deploy:update", "deploy:cleanup", "deploy:set_local_settings",
+      "deploy:pip_install", "deploy:collectstatic", "deploy:static_simlink", 
+      "deploy:migrate"
 
-after "deploy:migrate", "deploy:restart", "deploy:chats:restart", 'deploy:stop_file_del'
+after "deploy:migrate", "deploy:restart", 'deploy:stop_file_del'
 
 namespace :deploy do
   desc 'Создает стоп-файл, чтобы другие процессы не начали обновление репо'
@@ -90,12 +84,6 @@ namespace :deploy do
   end
 
   # db
-  desc "collectstatic for s3"
-  task :collectstatic_s3, :roles => :db do
-    run "cd #{deploy_to}/current && ./scripts/deploy_make.sh #{app_role} collectstatic"
-    run "cd #{deploy_to}/current && ./scripts/deploy_make.sh #{app_role} compress"
-  end
-
   desc "compress"
   task :compress, :roles => :db do
     run "cd #{deploy_to}/current && ./scripts/deploy_make.sh #{app_role} compress"
