@@ -10,14 +10,17 @@ uninstall:
 _production_requirements:
 	@echo "Installing production requirements"
 	@pip install --exists-action=s -r docs/production.txt
+	@pip install --exists-action=s -r compat/spirit/requirements.txt
 
 _dev_requirements:
 	@echo "Installing development requirements"
 	@pip install --exists-action=s -r docs/develop.txt
+	@pip install --exists-action=s -r compat/spirit/requirements.txt
 
 _requirements:
 	@echo "Installing common requirements"
 	@pip install --exists-action=s -r docs/common.txt
+	@pip install --exists-action=s -r compat/spirit/requirements.txt
 
 req: _requirements
 
