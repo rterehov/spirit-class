@@ -3,8 +3,6 @@
 import os
 import sys
 
-from spirit.settings import *
-
 # from django.conf import global_settings
 # from django.core.urlresolvers import reverse_lazy
 # from django.utils.translation import ugettext_lazy as _
@@ -13,9 +11,12 @@ from spirit.settings import *
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 ENV_ROOT = os.path.dirname(PROJECT_ROOT)
 
-sys.path.insert(0, os.path.join(ENV_ROOT, 'apps'))
-sys.path.insert(1, os.path.join(ENV_ROOT, 'compat'))
-sys.path.insert(2, os.path.join(ENV_ROOT))
+sys.path.insert(0, os.path.join(ENV_ROOT, 'compat/spirit'))
+sys.path.insert(1, os.path.join(ENV_ROOT, 'apps'))
+sys.path.insert(2, os.path.join(ENV_ROOT, 'compat'))
+sys.path.insert(3, os.path.join(ENV_ROOT))
+
+from spirit.settings import *
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -73,6 +74,7 @@ INSTALLED_APPS += (
     'django.contrib.formtools',
     
     'south',
+    'spirit',
     # 'post_office',
 )
     
