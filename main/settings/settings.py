@@ -26,7 +26,7 @@ SECRET_KEY = 'n6hd$-f8dn8@-!dg2tvldl+snhela+u#+a4rjwea(r&gtr7r9r:settings'
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [188.226.152.105]
 
 
 # Application definition
