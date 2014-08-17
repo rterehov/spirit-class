@@ -68,13 +68,13 @@ INSTALLED_APPS += (
     
     'south',
     'spirit',
-    # 'post_office',
+    'post_office',
 )
     
 
 DEFAULT_FROM_EMAIL = 'noreply@class.com'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL    
-# EMAIL_BACKEND = 'post_office.EmailBackend'
+EMAIL_BACKEND = 'post_office.EmailBackend'
 
 
 # Internationalization
