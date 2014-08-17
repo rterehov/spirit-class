@@ -6,3 +6,5 @@ South==0.8.4
 uWSGI==2.0.5.1
 
 django-djconfig==0.1.4
+
+django-post-office
