@@ -30,6 +30,13 @@ ALLOWED_HOSTS = ['188.226.152.105']
 
 
 # Application definition
+if len(MIDDLEWARE_CLASSES):
+    MIDDLEWARE_CLASSES = [
+        __class \
+        for __class in MIDDLEWARE_CLASSES \
+        if __class != 'django.middleware.locale.LocaleMiddleware'
+    ]
+    MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES)
 MIDDLEWARE_CLASSES += (
 )
 
@@ -80,8 +87,7 @@ EMAIL_BACKEND = 'post_office.EmailBackend'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
-# LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'ru-RU'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 USE_I18N = True
