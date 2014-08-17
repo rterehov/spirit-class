@@ -13,12 +13,13 @@ set :normalize_asset_timestamps, false
 
 # Repo settings
 set :scm, :git
-set :repository, "git@bitbucket.org:rterehov/class.git"
 set :git_enable_submodules, 1
 
-# Remote caching will keep a local git repository on the server
-# and it will only fetch the changes since the last deploy
+# Что и как деплоим
+set :repository, "git@bitbucket.org:rterehov/class.git"
 set :deploy_via, :remote_cache
+# set :repository,  "."
+# set :deploy_via, :copy
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true

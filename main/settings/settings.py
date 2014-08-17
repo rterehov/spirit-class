@@ -8,6 +8,7 @@ import sys
 # from django.utils.translation import ugettext_lazy as _
 
 
+SITE_ID = 1
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 ENV_ROOT = os.path.dirname(PROJECT_ROOT)
 
@@ -17,26 +18,27 @@ sys.path.insert(2, os.path.join(ENV_ROOT, 'compat'))
 sys.path.insert(3, os.path.join(ENV_ROOT))
 
 from spirit.settings import *
-
+ST_PRIVATE_FORUM = True
+ST_COMMENTS_PER_PAGE = 30
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'n6hd$-f8dn8@-!dg2tvldl+snhela+u#+a4rjwea(r&gtr7r9r:settings'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['188.226.152.105']
 
 
 # Application definition
-MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+if len(MIDDLEWARE_CLASSES):
+    MIDDLEWARE_CLASSES = [
+        __class \
+        for __class in MIDDLEWARE_CLASSES \
+        if __class != 'django.middleware.locale.LocaleMiddleware'
+    ]
+    MIDDLEWARE_CLASSES = tuple(MIDDLEWARE_CLASSES)
+MIDDLEWARE_CLASSES += (
 )
 
 ROOT_URLCONF = 'main.urls'
@@ -66,7 +68,7 @@ INSTALLED_APPS += (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     # 'django.contrib.staticfiles',
     'django.contrib.admin',
@@ -75,19 +77,18 @@ INSTALLED_APPS += (
     
     'south',
     'spirit',
-    # 'post_office',
+    'post_office',
 )
     
 
 DEFAULT_FROM_EMAIL = 'noreply@class.com'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL    
-# EMAIL_BACKEND = 'post_office.EmailBackend'
+EMAIL_BACKEND = 'post_office.EmailBackend'
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
-# LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'ru-RU'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 USE_I18N = True
