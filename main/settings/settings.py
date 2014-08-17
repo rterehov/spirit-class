@@ -17,7 +17,7 @@ sys.path.insert(2, os.path.join(ENV_ROOT, 'compat'))
 sys.path.insert(3, os.path.join(ENV_ROOT))
 
 from spirit.settings import *
-# ST_PRIVATE_FORUM = True
+ST_PRIVATE_FORUM = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'n6hd$-f8dn8@-!dg2tvldl+snhela+u#+a4rjwea(r&gtr7r9r:settings'
@@ -29,13 +29,7 @@ ALLOWED_HOSTS = ['188.226.152.105']
 
 
 # Application definition
-MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+MIDDLEWARE_CLASSES += (
 )
 
 ROOT_URLCONF = 'main.urls'
