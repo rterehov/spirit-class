@@ -8,6 +8,7 @@ import sys
 # from django.utils.translation import ugettext_lazy as _
 
 
+SITE_ID = 1
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 ENV_ROOT = os.path.dirname(PROJECT_ROOT)
 
@@ -59,7 +60,7 @@ INSTALLED_APPS += (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    # 'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.messages',
     # 'django.contrib.staticfiles',
     'django.contrib.admin',
