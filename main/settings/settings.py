@@ -19,6 +19,7 @@ sys.path.insert(3, os.path.join(ENV_ROOT))
 
 from spirit.settings import *
 ST_PRIVATE_FORUM = True
+ST_APPROVE_NEW_USERS = True
 ST_COMMENTS_PER_PAGE = 30
 
 # SECURITY WARNING: keep the secret key used in production secret!
