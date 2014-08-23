@@ -25,7 +25,7 @@ ST_COMMENTS_PER_PAGE = 30
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'n6hd$-f8dn8@-!dg2tvldl+snhela+u#+a4rjwea(r&gtr7r9r:settings'
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['188.226.152.105']
