@@ -17,7 +17,6 @@ sys.path.insert(1, os.path.join(ENV_ROOT, 'apps'))
 sys.path.insert(2, os.path.join(ENV_ROOT, 'compat'))
 sys.path.insert(3, os.path.join(ENV_ROOT))
 
-ALLOWED_HOSTS = ['127.0.0.1', '188.226.152.105', '1358.rterehov.com', ".rterehov.com"]
 
 from spirit.settings import *
 ST_PRIVATE_FORUM = True
@@ -31,7 +30,7 @@ SECRET_KEY = 'n6hd$-f8dn8@-!dg2tvldl+snhela+u#+a4rjwea(r&gtr7r9r:settings'
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['188.226.152.105']
+ALLOWED_HOSTS = ['127.0.0.1', '188.226.152.105', ".rterehov.com"]
 
 
 # Application definition
