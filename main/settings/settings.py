@@ -17,6 +17,8 @@ sys.path.insert(1, os.path.join(ENV_ROOT, 'apps'))
 sys.path.insert(2, os.path.join(ENV_ROOT, 'compat'))
 sys.path.insert(3, os.path.join(ENV_ROOT))
 
+ALLOWED_HOSTS = ['127.0.0.1', '188.226.152.105']
+
 from spirit.settings import *
 ST_PRIVATE_FORUM = True
 ST_APPROVE_NEW_USERS = True
