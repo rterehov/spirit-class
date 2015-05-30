@@ -20,8 +20,8 @@ set :repository, "git@bitbucket.org:rterehov/class.git"
 set :deploy_via, :remote_cache
 
 # Для выката с локальной машины
-set :repository,  "."
-set :deploy_via, :copy
+# set :repository,  "."
+# set :deploy_via, :copy
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
