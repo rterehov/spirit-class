@@ -17,9 +17,7 @@ urlpatterns = patterns('',
     #                         name='index'
     #                     ),
 
-    url(r'^', include('spirit.urls')),
-
-    url(r'^board/',     include('spirit.urls', namespace="my_spirit", app_name="my_spirit")),
+    url(r'^board/',     include('spirit.urls')),
     url(r'^admin/',     include(admin.site.urls)),
 )
 
