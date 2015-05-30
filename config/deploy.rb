@@ -18,8 +18,10 @@ set :git_enable_submodules, 1
 # Что и как деплоим
 set :repository, "git@bitbucket.org:rterehov/class.git"
 set :deploy_via, :remote_cache
-# set :repository,  "."
-# set :deploy_via, :copy
+
+# Для выката с локальной машины
+set :repository,  "."
+set :deploy_via, :copy
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
