@@ -11,12 +11,15 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    url(r'^$',          RedirectView.as_view(
-                            url=reverse_lazy('spirit:index'),
-                            permanent=False),
-                            name='index'
-                        ),
-    url(r'^board/',     include('spirit.urls', namespace="spirit", app_name="spirit")),
+    # url(r'^$',          RedirectView.as_view(
+    #                         url=reverse_lazy('spirit:index'),
+    #                         permanent=False),
+    #                         name='index'
+    #                     ),
+
+    url(r'^', include('spirit.urls')),
+
+    url(r'^board/',     include('spirit.urls', namespace="my_spirit", app_name="my_spirit")),
     url(r'^admin/',     include(admin.site.urls)),
 )
 

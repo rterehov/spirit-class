@@ -1,10 +1,6 @@
-Django==1.6.5
-Pillow==2.4.0
+Django==1.7.8
 
 psycopg2==2.4.5
-South==0.8.4
-uWSGI==2.0.5.1
-
-django-djconfig==0.1.4
+uWSGI==2.0.10
 
 django-post-office
