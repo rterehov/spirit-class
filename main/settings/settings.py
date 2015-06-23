@@ -14,7 +14,7 @@ ENV_ROOT = os.path.dirname(PROJECT_ROOT)
 
 sys.path.insert(0, os.path.join(ENV_ROOT, 'compat/spirit'))
 sys.path.insert(1, os.path.join(ENV_ROOT, 'apps'))
-sys.path.insert(2, os.path.join(ENV_ROOT, 'compat'))
+# sys.path.insert(2, os.path.join(ENV_ROOT, 'compat'))
 sys.path.insert(3, os.path.join(ENV_ROOT))
 
 from spirit.settings import *
